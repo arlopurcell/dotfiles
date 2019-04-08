@@ -121,7 +121,7 @@ fi
 alias vim="nvim"
 alias ls="exa"
 alias cdc="cd /home/arlo/indeed/care"
-alias dotfile="/usr/bin/git --git-dir=$HOME/.config/dotfile --work-tree=$HOME"
+alias dotfile="/usr/bin/git --git-dir=$HOME/.config/dotfile/repo --work-tree=$HOME"
 
 ibranch() {
     indy branch $1 && indy jira assign
