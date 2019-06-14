@@ -1,0 +1,14 @@
+[Unit]
+Description=i3lock before suspend
+Before=sleep.target
+
+[Service]
+User=%I
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock --color 000000 --ignore-empty-password
+ExecStartPost=/bin/sleep 1
+
+[Install]
+WantedBy=suspend.target
+

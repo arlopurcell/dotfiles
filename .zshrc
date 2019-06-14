@@ -10,6 +10,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PATH="/home/arlo/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="/home/arlo/.pyenv"
 
 # Ensure base distro defaults xdg path are set if nothing filed up some
 # defaults yet.
@@ -36,7 +37,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -90,7 +91,6 @@ alias anti='ant -Dresolve_run=true'
 stty -ixon 
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 #RPROMPT='%F{yellow}%*'
 
@@ -139,4 +139,31 @@ autoload -Uz compinit
 compinit
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
+
+# powerlevel9k config
+POWERLEVEL9K_TIME_BACKGROUND='009'
+POWERLEVEL9K_TIME_FOREGROUND='black'
+
+POWERLEVEL9K_STATUS_CROSS=true
+
+zsh_snakey_pyenv() {
+    if [[ $(pyenv version-name) != "system" ]]; then
+        echo "🐍"
+    fi
+}
+POWERLEVEL9K_CUSTOM_SNAKEY_PYENV='zsh_snakey_pyenv'
+POWERLEVEL9K_CUSTOM_SNAKEY_PYENV_BACKGROUND='grey'
+
+zsh_snakey_virtualenv() {
+    if [[ $(pyenv version-name) == "system" ]]; then
+        if [[ -n "${VIRTUAL_ENV}" ]]; then
+            echo "🐍"
+        fi
+    fi
+}
+POWERLEVEL9K_CUSTOM_SNAKEY_VIRTUALENV='zsh_snakey_virtualenv'
+POWERLEVEL9K_CUSTOM_SNAKEY_VIRTUALENV_BACKGROUND='black'
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context custom_snakey_virtualenv custom_snakey_pyenv dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs vcs time)
 

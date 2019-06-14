@@ -159,15 +159,15 @@ bar {
 
 # Below is my personal workspace setup. Obviously customize this to your own workflow
 # name and bind workspaces to screens
-workspace 1 output DP-2
-workspace 2 output DP-2
-workspace "3:terminal" output DP-2
-workspace "4:ide" output DP-2
+workspace 1 output DP-2-2
+workspace 2 output DP-2-2
+workspace "3:terminal" output DP-2-2
+workspace "4:ide" output DP-2-2
 
-workspace "5:browser" output DP-1-1
-workspace "6:messages" output DP-1-1
-workspace 7 output DP-1-1
-workspace 8 output DP-1-1
+workspace "5:browser" output DP-1-2
+workspace "6:messages" output DP-1-2
+workspace 7 output DP-1-2
+workspace 8 output DP-1-2
 
 # bind applications to workspaces
 assign [class="terminal"] 3:terminal
@@ -184,14 +184,18 @@ workspace_auto_back_and_forth yes
 
 # lock screen
 bindsym $mod+Ctrl+l exec "i3lock --color 000000 --ignore-empty-password"
+bindsym $mod+Ctrl+s exec "systemctl suspend"
 
 # startup default stuff
 #exec i3-sensible-terminal
-#exec firefox
+#exec firefox-dev
 #exec subl
 #exec slack
 exec /home/arlo/bin/update_displays.sh
 
-exec xautolock -time 15 -locker 'i3lock --color 000000 --ignore-empty-password'
-exec xautolock -time 20 -locker 'systemctl suspend'
+exec xautolock -time 15 -locker 'systemctl suspend'
+
+# monitor stuff
+bindsym $mod+Ctrl+d exec "/home/arlo/.screenlayout/desk.sh"
+bindsym $mod+Ctrl+m exec "/home/arlo/.screenlayout/mobile.sh"
 

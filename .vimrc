@@ -31,6 +31,11 @@ Plug 'Yggdroot/indentLine'
 " Plug 'vim-syntastic/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'wincent/command-t', {
+  \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+  \ }
 
 call plug#end()
 
@@ -187,11 +192,9 @@ colorscheme solarized
 
 set clipboard=unnamed
 
-nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>d :NERDTreeFocusToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '/~$', '.egg-info[[dir]]']
 
-let g:ctrlp_map = '<leader>t'
-set wildignore+=*/build/**
-set wildignore+=*/dist/**
-set wildignore+=*/web-build/**
-let g:ctrlp_use_caching=0
+let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionTabMap = '<CR>'
 
