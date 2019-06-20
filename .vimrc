@@ -4,9 +4,7 @@
 "              newbie, basing your first .vimrc on this file is a good choice.
 "              If you're a more advanced user, building your own .vimrc based
 "              on this file is still a good idea.
-if &shell =~# 'fish$'
-    set shell=zsh
-endif
+set shell=zsh
 "------------------------------------------------------------
 " Features {{{1
 "
@@ -33,9 +31,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'wincent/command-t', {
-  \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-  \ }
+Plug 'wincent/command-t'
 
 call plug#end()
 
@@ -70,7 +66,7 @@ syntax on
 " for keeping undo history after closing Vim entirely. Vim will complain if you
 " try to quit without saving, and swap files will keep you safe if your computer
 " crashes.
-set hidden
+" set hidden
 
 " Note that not everyone likes working this way (with the hidden option).
 " Alternatives include using tabs or split windows instead of re-using the same
@@ -192,9 +188,39 @@ colorscheme solarized
 
 set clipboard=unnamed
 
-nnoremap <leader>d :NERDTreeFocusToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '/~$', '.egg-info[[dir]]']
+" Put all backup, swap, and undo files in the same place
+set backup
+set swapfile
+set undofile
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
-let g:CommandTAcceptSelectionMap = '<C-t>'
-let g:CommandTAcceptSelectionTabMap = '<CR>'
+
+"------------------------------------------
+" netrw settings
+"------------------------------------------
+" nnoremap <leader>w :Vexplore<CR>
+" nnoremap <leader>d <C-w><C-w>
+" 
+" " Tree style list display
+" let g:netrw_liststyle = 3
+" 
+" " Remove directory banner
+" let g:netrw_banner = 0
+" 
+" " Open files in other window by default
+" "let g:netrw_browse_split = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" 
+" " Window size: 25%
+" let g:netrw_winsize = 25
+" let g:netrw_list_hide = '^\.,\.pyc$,\.egg-info/$'
+
+nnoremap <leader>d :NERDTreeFocusToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]']
+
+" let g:CommandTAcceptSelectionMap = '<C-t>'
+" let g:CommandTAcceptSelectionTabMap = '<CR>'
 

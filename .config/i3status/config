@@ -28,8 +28,7 @@ wireless _first_ {
 }
 
 ethernet _first_ {
-        # if you use %speed, i3status requires root privileges
-        format_up = "🔗 %speed"
+        format_up = "🔗 %speed %ip"
         format_down = ""
 }
 
@@ -60,4 +59,6 @@ load {
 
 disk "/" {
         format = "🗄️ %avail"
+        low_threshold = 5
+        threshold_type = percentage_avail
 }

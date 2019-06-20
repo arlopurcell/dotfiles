@@ -118,9 +118,7 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-alias vim="nvim"
 alias ls="exa"
-alias cdc="cd /home/arlo/indeed/care"
 alias dotfile="/usr/bin/git --git-dir=$HOME/.config/dotfile/repo --work-tree=$HOME"
 
 ibranch() {
