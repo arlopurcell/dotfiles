@@ -32,6 +32,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'wincent/command-t'
+Plug 'sudar/vim-arduino-syntax'
 
 call plug#end()
 
@@ -219,7 +220,7 @@ set undodir=~/.vim/undo//
 " let g:netrw_list_hide = '^\.,\.pyc$,\.egg-info/$'
 
 nnoremap <leader>d :NERDTreeFocusToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]']
+let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]', '__pycache__[[dir]]']
 
 " let g:CommandTAcceptSelectionMap = '<C-t>'
 " let g:CommandTAcceptSelectionTabMap = '<CR>'

@@ -10,5 +10,5 @@ echo '['
 echo '[],'
 
 # Now send blocks with information forever:
-exec conky -c $HOME/.config/conky/conky.conf
+exec conky -c $HOME/.config/conky/conky_i3bar.conf
 
