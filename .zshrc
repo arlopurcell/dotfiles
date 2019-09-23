@@ -73,11 +73,16 @@ DISABLE_UNTRACKED_FILES_DIRTY="false"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+
+# zsh autosuggestions config
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
+
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ssh-agent ant git-prompt docker rust cargo)
+plugins=(ssh-agent ant git-prompt docker rust cargo zsh-autosuggestions)
 
 # User configuration
 
@@ -125,7 +130,7 @@ ibranch() {
     indy branch $1 && indy jira assign
 }
 
-alias icr="indy gitlab create-mr"
+alias icr="indy gitlab create-mr && indy jira transition 'Pending Review'"
 
 export NVM_DIR="/home/arlo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

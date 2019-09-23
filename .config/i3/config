@@ -196,6 +196,10 @@ assign [window_role="browser"] 5:browser
 # back and forth workspace switching
 workspace_auto_back_and_forth yes
 
+# move workspace to other monitor
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
+
 # lock screen
 bindsym $mod+Ctrl+l exec "i3lock --color 000000 --ignore-empty-password"
 bindsym $mod+Ctrl+s exec "systemctl suspend"

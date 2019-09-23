@@ -7,15 +7,18 @@ In short,
 * tell it to ignore untracked files: `dotfile config --local status.showUntrackedFiles no`
 
 Also the following should be installed for optimal configuration pleasure:
-exa
-neovim
-ranger
-conky
-i3
-fd
-pyenv
-zsh
-oh-my-zsh
-fzf
-kitty
 
+* package manager
+** zsh
+** neovim
+** ranger
+** conky
+** i3
+* Custom install 
+** fd
+** pyenv
+** exa
+** oh-my-zsh
+** fzf
+** kitty
+** zsh-autosuggestions

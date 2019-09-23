@@ -25,7 +25,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'vim-syntastic/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rust-lang/rust.vim'
@@ -157,9 +158,9 @@ set pastetoggle=<F11>
 " Indentation settings according to personal preference.
 
 " Indentation settings for using 4 spaces instead of tabs.
-" Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=4
 set softtabstop=4
+set tabstop=4
 set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
@@ -199,6 +200,29 @@ set undodir=~/.vim/undo//
 
 
 "------------------------------------------
+" File type specific settings
+"------------------------------------------
+
+" Less indentation in html
+autocmd BufNewFile,BufRead *.html setlocal sw=2 sts=2 ts=2
+
+
+
+"------------------------------------------
+" Indent Guides Setttings
+"------------------------------------------
+let g:indent_guides_enable_on_vim_startup = 1
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
+
+hi IndentGuidesOdd  ctermbg=8
+hi IndentGuidesEven ctermbg=8
+
+let g:indent_guides_guide_size = 1
+
+"------------------------------------------
 " netrw settings
 "------------------------------------------
 " nnoremap <leader>w :Vexplore<CR>
@@ -218,10 +242,14 @@ set undodir=~/.vim/undo//
 " " Window size: 25%
 " let g:netrw_winsize = 25
 " let g:netrw_list_hide = '^\.,\.pyc$,\.egg-info/$'
+"
+
+set wildignore+=*/mode_modules/*,*/__pycache__/*,*/target/*,*.pyc
 
 nnoremap <leader>d :NERDTreeFocusToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]', '__pycache__[[dir]]']
 
 " let g:CommandTAcceptSelectionMap = '<C-t>'
 " let g:CommandTAcceptSelectionTabMap = '<CR>'
+let g:CommandTFileScanner = "git"
 
