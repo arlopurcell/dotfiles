@@ -248,6 +248,7 @@ set wildignore+=*/mode_modules/*,*/__pycache__/*,*/target/*,*.pyc
 
 nnoremap <leader>d :NERDTreeFocusToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]', '__pycache__[[dir]]']
+let NERDTreeWinSize=60
 
 " let g:CommandTAcceptSelectionMap = '<C-t>'
 " let g:CommandTAcceptSelectionTabMap = '<CR>'
