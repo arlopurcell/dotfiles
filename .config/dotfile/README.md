@@ -8,17 +8,13 @@ In short,
 
 Also the following should be installed for optimal configuration pleasure:
 
-* package manager
-** zsh
-** neovim
-** ranger
-** conky
-** i3
-* Custom install 
-** fd
-** pyenv
-** exa
-** oh-my-zsh
-** fzf
-** kitty
-** zsh-autosuggestions
+`sudo apt-get install zsh neovim ranger conky i3 fd-find`
+pyenv - `curl https://pyenv.run | bash`
+oh-my-zsh - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+kitty - `curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin`
+zsh-autosuggestions - `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+fzf - `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install`
+
+Other stuff I usually install:
+rust - `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+exa - once rust is installed: `cargo install exa`
