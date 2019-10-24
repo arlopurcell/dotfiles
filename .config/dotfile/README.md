@@ -18,3 +18,4 @@ fzf - `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/
 Other stuff I usually install:
 rust - `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 exa - once rust is installed: `cargo install exa`
+ripgrep - once rust is installed: `cargo install ripgrep`
