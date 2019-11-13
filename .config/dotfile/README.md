@@ -8,7 +8,7 @@ In short,
 
 Also the following should be installed for optimal configuration pleasure:
 nix - for reproducible package management: `curl https://nixos.org/nix/install | sh`
-everything else `nix-env -i zsh neovim ranger conky i3 fd oh-my-zsh alacritty zsh-autosuggestions fzf cargo ripgrep exa`
+everything else `nix-env -i zsh neovim ranger conky i3 fd oh-my-zsh kitty zsh-autosuggestions fzf cargo ripgrep exa`
 except pyenv - `curl https://pyenv.run | bash`
 
 TODO - convert this whole repo to use https://github.com/rycee/home-manager

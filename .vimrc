@@ -32,10 +32,13 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'wincent/command-t'
+" Plug 'wincent/command-t'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'sudar/vim-arduino-syntax'
 
 call plug#end()
+
 
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
@@ -250,7 +253,7 @@ nnoremap <leader>d :NERDTreeFocusToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]', '__pycache__[[dir]]']
 let NERDTreeWinSize=60
 
-" let g:CommandTAcceptSelectionMap = '<C-t>'
-" let g:CommandTAcceptSelectionTabMap = '<CR>'
-let g:CommandTFileScanner = "git"
+nnoremap <leader>a :Files<CR>
+nnoremap <leader>t :GFiles<CR>
+nnoremap <leader>r :Rg<CR>
 
