@@ -25,17 +25,23 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
-"Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'vim-syntastic/syntastic'
 Plug 'altercation/vim-colors-solarized'
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 " Plug 'wincent/command-t'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'sudar/vim-arduino-syntax'
+" Plug 'sudar/vim-arduino-syntax'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
 
 call plug#end()
 
@@ -56,28 +62,6 @@ syntax on
 "------------------------------------------------------------
 " Must have options {{{1
 "
-" These are highly recommended options.
-
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
-"
-" One such option is the 'hidden' option, which allows you to re-use the same
-" window and switch from an unsaved buffer without saving it first. Also allows
-" you to keep an undo history for multiple files when re-using the same window
-" in this way. Note that using persistent undo also lets you undo in multiple
-" files even in the same window, but is less efficient and is actually designed
-" for keeping undo history after closing Vim entirely. Vim will complain if you
-" try to quit without saving, and swap files will keep you safe if your computer
-" crashes.
-" set hidden
-
-" Note that not everyone likes working this way (with the hidden option).
-" Alternatives include using tabs or split windows instead of re-using the same
-" window as mentioned above, and/or either of the following options:
-" set confirm
-" set autowriteall
 
 " Better command-line completion
 set wildmenu
@@ -257,3 +241,32 @@ nnoremap <leader>a :Files<CR>
 nnoremap <leader>t :GFiles<CR>
 nnoremap <leader>r :Rg<CR>
 
+"------------------------------------------
+" language client settings
+"------------------------------------------
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ }
+
+let g:LanguageClient_rootMarkers = ['.langserver.root']
+
+nnoremap <leader>l :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+"nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+"nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+"nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+"------------------------------------------
+" ncm2 code completion settings
+"------------------------------------------
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
