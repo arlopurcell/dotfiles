@@ -22,15 +22,10 @@ DEFAULT_USER=`whoami`
 #
 alias ls="exa"
 alias dotfile="/usr/bin/git --git-dir=$HOME/.config/dotfile/repo --work-tree=$HOME"
-
-
-export NVM_DIR="/home/arlo/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+alias vim="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-autoload -Uz compinit
-compinit
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 

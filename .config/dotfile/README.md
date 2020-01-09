@@ -7,8 +7,19 @@ In short,
 * tell it to ignore untracked files: `dotfile config --local status.showUntrackedFiles no`
 
 Also the following should be installed for optimal configuration pleasure:
-nix - for reproducible package management: `curl https://nixos.org/nix/install | sh`
-everything else `nix-env -i zsh neovim ranger conky i3 fd oh-my-zsh kitty zsh-autosuggestions fzf cargo ripgrep exa`
-except pyenv - `curl https://pyenv.run | bash`
+zsh 
+neovim 
+ranger 
+conky 
+i3 
+fd 
+oh-my-zsh 
+kitty 
+zsh-autosuggestions 
+fzf 
+cargo 
+ripgrep 
+exa
 
-TODO - convert this whole repo to use https://github.com/rycee/home-manager
+pyenv - `curl https://pyenv.run | bash`
+
