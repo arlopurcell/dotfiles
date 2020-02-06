@@ -25,17 +25,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
-" Plug 'Yggdroot/indentLine'
 Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'vim-syntastic/syntastic'
 Plug 'altercation/vim-colors-solarized'
-" Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-" Plug 'wincent/command-t'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'sudar/vim-arduino-syntax'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -233,10 +228,12 @@ let g:indent_guides_guide_size = 1
 
 set wildignore+=*/mode_modules/*,*/__pycache__/*,*/target/*,*.pyc
 
+" NERDTree settings
 nnoremap <leader>d :NERDTreeFocusToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]', '__pycache__[[dir]]']
 let NERDTreeWinSize=60
 
+" fzf settings
 nnoremap <leader>a :Files<CR>
 nnoremap <leader>t :GFiles<CR>
 nnoremap <leader>r :Rg<CR>
@@ -270,3 +267,8 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
+
+"------------------------------------------
+" python settings
+"------------------------------------------
+let g:python3_host_prog = '/home/arlo/.pyenv/versions/neovim3/bin/python'
