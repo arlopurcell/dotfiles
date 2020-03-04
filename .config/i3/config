@@ -122,7 +122,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -167,8 +168,14 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     #status_command i3status
-    status_command $HOME/.config/conky/i3conkybar.sh
-    tray_output primary
+    #status_command $HOME/.config/conky/i3conkybar.sh
+    #tray_output primary
+    #font pango:Inconsolota, FontAwesome 14
+    #font pango:Anonymice Powerline, FontAwesome 14
+    #font pango:DejaVu Sans Mono, FontAwesome 12
+    font pango:DaddyTimeMono, FontAwesome 12
+    position bottom
+    status_command $HOME/bin/i3status-rs $HOME/.config/i3/status-rs.toml
 }
 
 # Below is my personal workspace setup. Obviously customize this to your own workflow
