@@ -10,7 +10,6 @@ Also the following should be installed for optimal configuration pleasure:
 zsh 
 neovim 
 ranger 
-conky 
 i3 
 fd 
 oh-my-zsh 
@@ -20,6 +19,7 @@ fzf
 cargo 
 ripgrep 
 exa
+i3status-rust - https://github.com/greshake/i3status-rust/
 
 pyenv - `curl https://pyenv.run | bash`
 
