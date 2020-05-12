@@ -173,17 +173,25 @@ bar {
     #font pango:Inconsolota, FontAwesome 14
     #font pango:Anonymice Powerline, FontAwesome 14
     #font pango:DejaVu Sans Mono, FontAwesome 12
-    font pango:DaddyTimeMono, FontAwesome 12
+    font pango:DaddyTimeMono, FontAwesome 10
     position bottom
     status_command $HOME/bin/i3status-rs $HOME/.config/i3/status-rs.toml
 }
 
 # Below is my personal workspace setup. Obviously customize this to your own workflow
 # name and bind workspaces to screens
-workspace 1 output DP-2-2
-workspace 2 output DP-2-2
-workspace "3:terminal" output DP-2-2
-workspace "4:ide" output DP-2-2
+
+#workspace 1 output DP-2-2
+#workspace 2 output DP-2-2
+#workspace "3:terminal" output DP-2-2
+#workspace 4 output DP-2-2
+#workspace "4:ide" output DP-2-2
+
+workspace 1 output DP-1-1
+workspace 2 output DP-1-1
+workspace "3:terminal" output DP-1-1
+workspace 4 output DP-1-1
+workspace "4:ide" output DP-1-1
 
 workspace "5:browser" output DP-1-2
 workspace "6:messages" output DP-1-2
@@ -216,12 +224,12 @@ bindsym $mod+Ctrl+s exec "systemctl suspend"
 #exec firefox-dev
 #exec subl
 #exec slack
-exec /home/arlo/bin/update_displays.sh
+#exec /home/arlo/bin/update_displays.sh
 
 exec xautolock -time 15 -locker "i3lock --color 000000 --ignore-empty-password"
 
 # monitor stuff
-bindsym $mod+Ctrl+d exec "/home/arlo/.screenlayout/desk.sh"
+bindsym $mod+Ctrl+d exec "/home/arlo/.screenlayout/home-desk.sh"
 bindsym $mod+Ctrl+m exec "/home/arlo/.screenlayout/mobile.sh"
 
 # screenshots

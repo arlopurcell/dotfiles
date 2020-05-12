@@ -244,8 +244,9 @@ nnoremap <leader>r :Rg<CR>
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
+"    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['rust-analyzer'],
     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
     \ 'python': ['/usr/local/bin/pyls'],

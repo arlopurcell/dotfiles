@@ -20,6 +20,7 @@ cargo
 ripgrep 
 exa
 i3status-rust - https://github.com/greshake/i3status-rust/
+delta - https://github.com/dandavison/delta
 
 pyenv - `curl https://pyenv.run | bash`
 

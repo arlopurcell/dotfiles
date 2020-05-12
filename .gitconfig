@@ -1,71 +1,71 @@
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-	ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 [format]
-        pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
+    pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 [merge]
-	tool = meld
-        conflictstyle = diff3
+    tool = meld
+    conflictstyle = diff3
 [mergetool]
-	keepBackup = false
-        prompt = false
+    keepBackup = false
+    prompt = false
 [mergetool "meld"]
-	trustExitCode = true
+    trustExitCode = true
 [diff]
-	tool = meld
+    tool = meld
 [difftool]
-	prompt = false
+    prompt = false
 [user]
-	name = arlo
-	email = arlo@indeed.com
+	name = Arlo J Purcell
+    email = arlo@indeed.com
 [alias]
-	co = commit -am
-	lol = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' 
-	lal = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --all
-
+    co = commit -am
+    lol = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' 
+    lal = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --all
 [core]
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/indeed/javadev/git/gitattributes
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    excludesfile = ~/.gitignore_global
+    attributesfile = ~/indeed/javadev/git/gitattributes
+    #pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta --dark --plus-color="#012800" --minus-color="#340001" --theme='Solarized (dark)'
 [push]
-	default = current
+    default = current
 [color "decorate"]
-	remoteBranch = red
-	tag = magenta
-	stash = yellow
-	HEAD = yellow
-	branch = cyan
+    remoteBranch = red
+    tag = magenta
+    stash = yellow
+    HEAD = yellow
+    branch = cyan
 [color "branch"]
-	current = yellow
-	local = green
+    current = yellow
+    local = green
 [include]
-	path = /home/arlo/indeed/javadev/git/merge-drivers
-	path = /home/arlo/indeed/javadev/git/aliases
-	path = /home/arlo/indeed/javadev/git/general-config
+    path = /home/arlo/indeed/javadev/git/merge-drivers
+    path = /home/arlo/indeed/javadev/git/aliases
+    path = /home/arlo/indeed/javadev/git/general-config
 [help]
-	autocorrect = 1
-[difftool "vimdiff"]
-	cmd = vim -f -d -c \"wincmd l\" -c 'cd \"$GIT_PREFIX\"' \"$LOCAL\" \"$REMOTE\"
+    autocorrect = 1
 [rerere]
-	enabled = true
+    enabled = true
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
 [init]
-	templatedir = ~/.git-templates
+    templatedir = ~/.git-templates
+[interactive]
+    diffFilter = delta --color-only

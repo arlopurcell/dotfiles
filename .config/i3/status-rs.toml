@@ -13,7 +13,7 @@ name = "awesome"
 block = "disk_space"
 path = "/"
 alias = ""
-show_percentage = true
+show_bar = true
 interval = 20
 warning = 20.0
 alert = 10.0
@@ -21,23 +21,25 @@ alert = 10.0
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+format_mem = "{Mupb}"
+format_swap = "{SUpb}"
 
 [[block]]
 block = "cpu"
 interval = 1
+format = "{utilizationbar}"
 
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage}%"
+format = "{bar}"
 
 [[block]]
 block = "net"
 device = "wlp59s0"
 ssid = true
 signal_strength = true
+signal_strength_bar = true
 speed_up = false
 speed_down = false
 interval = 5
@@ -59,4 +61,6 @@ format = "%a %b %e %R"
 
 [[block]]
 block = "sound"
+bar = true
+show_volume_when_muted = true
 step_width = 5
