@@ -1,6 +1,3 @@
-export PATH="$HOME/bin:$HOME/.cargo/bin:$PATH"
-export EDITOR=vim
-export JAVA_HOME=/usr/java/jdk1.8.0_202
 
 # Single-brace syntax because this is required in bash, dash, zsh, etc
 if [ -e "$HOME/env/etc/indeed_profile" ]; then
