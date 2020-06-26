@@ -21,7 +21,7 @@ DEFAULT_USER=`whoami`
 # For a full list of active aliases, run `alias`.
 #
 alias ls="exa"
-alias dotfile="/usr/bin/git --git-dir=$HOME/.config/dotfile/repo --work-tree=$HOME"
+alias dotfile="/usr/bin/git --git-dir=$HOME/.config/dotfile --work-tree=$HOME"
 alias vim="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
