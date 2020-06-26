@@ -32,6 +32,7 @@ output * bg /usr/share/backgrounds/default.png fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output 'Unknown Sceptre Z27 0x00000000' pos 0 0 res 3840x2160
 output 'Dell Inc. DELL P2416D TN5PP6860JWS' pos 3840 0 res 2560x1440
+output eDP-1 pos 6400 0 res 1920x1080
 
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
@@ -42,11 +43,12 @@ bindswitch --reload --locked lid:off output $laptop enable
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock --daemonize --color 000000 --ignore-empty-password' \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock --daemonize --color 000000 --ignore-empty-password'
 bindsym $mod+Ctrl+l exec $HOME/.config/sway/lockman.sh
+bindsym $mod+Ctrl+s exec systemctl suspend
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -146,6 +148,9 @@ input type:keyboard {
     bindsym $mod+Shift+0 move container to workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    bindsym $mod+Ctrl+Left move workspace to output left
+    bindsym $mod+Ctrl+Right move workspace to output right
 #
 # Layout stuff:
 #
