@@ -9,3 +9,5 @@ if [ -d "$HOME/env/bin" ]; then
     PATH="$HOME/env/bin:$PATH"
 fi
 
+export ARTIFACT_DIR="/var/"
+

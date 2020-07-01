@@ -3,3 +3,5 @@
 if [ -e "$HOME/env/etc/indeedrc" ]; then
     . "$HOME/env/etc/indeedrc"
 fi
+
+export ARTIFACT_DIR=/var

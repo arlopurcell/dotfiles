@@ -5,7 +5,9 @@ POWERLEVEL9K_STATUS_CROSS=true
 
 zsh_snakey_pyenv() {
     if [[ $(pyenv version-name) != "system" ]]; then
-        echo "🐍"
+        if [[ $(pyenv version-name) != $(pyenv global) ]]; then
+            echo "🐍"
+        fi
     fi
 }
 POWERLEVEL9K_CUSTOM_SNAKEY_PYENV='zsh_snakey_pyenv'

@@ -11,7 +11,9 @@ alias ibwb="cd ~/indeed/ibw-leila-builders"
 ibranch() {
    indy branch $1 && indy jira assign
 }
+
 icr() {
-   mr_id=$(indy gitlab create-mr --assignee jguajardo)
-   indy gitlab add-approvers ${mr_id} --approvers jguajardo andrewlee ajitd
+   mr_id=$(indy gitlab create-mr | tail -n 1)
+   group_project=$(git remote get-url origin | sed "s/.*:\(.*\)\.git$/\1/")
+   echo "https://code.corp.indeed.com/${group_project}/-/merge_requests/${mr_id}"
 }

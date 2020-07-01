@@ -26,7 +26,7 @@
     lal = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --all
 [core]
     excludesfile = ~/.gitignore_global
-    attributesfile = ~/indeed/javadev/git/gitattributes
+	attributesfile = /home/arlo/indeed/javadev/git/gitattributes
     #pager = diff-so-fancy | less --tabs=4 -RFX
     pager = delta --dark --plus-color="#012800" --minus-color="#340001" --theme='Solarized (dark)'
 [push]
@@ -41,9 +41,9 @@
     current = yellow
     local = green
 [include]
-    path = /home/arlo/indeed/javadev/git/merge-drivers
-    path = /home/arlo/indeed/javadev/git/aliases
-    path = /home/arlo/indeed/javadev/git/general-config
+	path = /home/arlo/indeed/javadev/git/merge-drivers
+	path = /home/arlo/indeed/javadev/git/aliases
+	path = /home/arlo/indeed/javadev/git/general-config
 [help]
     autocorrect = 1
 [rerere]

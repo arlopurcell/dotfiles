@@ -15,10 +15,15 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term kitty
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#for_window [app_id="kitty" instance="launcher"] floating enable, border pixel 10, sticky enable
+set $menu kitty --title launcher --class launcher bash -c 'compgen -c | sort -u | /home/arlo/.fzf/bin/fzf | xargs -r swaymsg -t command exec'
+for_window [app_id="^launcher$"] floating enable, border pixel 10, resize set 800px 500px
+#set $menu kitty bash -c 'compgen -c; read'
 
 ### Output configuration
 #
@@ -31,26 +36,24 @@ output * bg /usr/share/backgrounds/default.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output 'Unknown Sceptre Z27 0x00000000' pos 0 0 res 3840x2160
-output 'Dell Inc. DELL P2416D TN5PP6860JWS' pos 3840 0 res 2560x1440
-output eDP-1 pos 6400 0 res 1920x1080
+output 'Dell Inc. DELL P2416D TN5PP6860JWS' pos 3840 500 res 2560x1440
+output eDP-1 pos 6400 1000 res 1920x1080
 
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 ### Idle configuration
-#
-# Example configuration:
-#
 exec swayidle -w \
-         timeout 300 'swaylock --daemonize --color 000000 --ignore-empty-password' \
-         timeout 600 'swaymsg "output * dpms off"' \
+         timeout 1800 'swaylock --daemonize --color 000000 --ignore-empty-password' \
+         timeout 2100 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock --daemonize --color 000000 --ignore-empty-password'
+         before-sleep 'swaylock --daemonize --color 000000 --ignore-empty-password' \
+         after-resume 'swaymsg "output * dpms on"'
 bindsym $mod+Ctrl+l exec $HOME/.config/sway/lockman.sh
 bindsym $mod+Ctrl+s exec systemctl suspend
 
-# This will lock your screen after 300 seconds of inactivity, then turn off
+# This will lock your screen after 1800 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
@@ -127,10 +130,10 @@ input type:keyboard {
     # Switch to workspace
     bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
+    bindsym $mod+3 workspace "3:terminal"
+    bindsym $mod+4 workspace "4:ide"
+    bindsym $mod+5 workspace "5:browser"
+    bindsym $mod+6 workspace "6:messages"
     bindsym $mod+7 workspace 7
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
@@ -138,10 +141,10 @@ input type:keyboard {
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
+    bindsym $mod+Shift+3 move container to workspace "3:terminal"
+    bindsym $mod+Shift+4 move container to workspace "4:ide"
+    bindsym $mod+Shift+5 move container to workspace "5:browser"
+    bindsym $mod+Shift+6 move container to workspace "6:messages"
     bindsym $mod+Shift+7 move container to workspace 7
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
@@ -151,6 +154,23 @@ input type:keyboard {
 
     bindsym $mod+Ctrl+Left move workspace to output left
     bindsym $mod+Ctrl+Right move workspace to output right
+
+    workspace 1 output 'Unknown Sceptre Z27 0x00000000'
+    workspace 2 output 'Unknown Sceptre Z27 0x00000000'
+    workspace "3:terminal" output 'Unknown Sceptre Z27 0x00000000'
+    workspace "4:ide" output 'Unknown Sceptre Z27 0x00000000'
+
+    workspace "5:browser" output 'Dell Inc. DELL P2416D TN5PP6860JWS'
+    workspace "6:messages" output 'Dell Inc. DELL P2416D TN5PP6860JWS'
+    workspace 7 output 'Dell Inc. DELL P2416D TN5PP6860JWS'
+    workspace 8 output 'Dell Inc. DELL P2416D TN5PP6860JWS'
+
+    for_window [app_id="kitty"] move to workspace "3:terminal"
+    for_window [class="jetbrains-idea"] move to workspace "4:ide"
+    for_window [app_id="firefox"] move to workspace "5:browser"
+    for_window [window_role="browser"] move to workspace "5:browser"
+    for_window [class="Slack"] move to workspace "6:messages"
+
 #
 # Layout stuff:
 #
