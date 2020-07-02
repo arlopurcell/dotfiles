@@ -17,3 +17,7 @@ icr() {
    group_project=$(git remote get-url origin | sed "s/.*:\(.*\)\.git$/\1/")
    echo "https://code.corp.indeed.com/${group_project}/-/merge_requests/${mr_id}"
 }
+
+missingshards() {
+    http --headers HEAD https://squall.indeed.com/iql/query "q==from $1 ${2:-yesterday} ${3:-today}" client==iqlwebapp "username==$LDAPUSER" view==1 head==1 | sed -n "s/^IQL-Missing-Shards: \(.*\)/\1/p"
+}
