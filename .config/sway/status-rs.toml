@@ -47,7 +47,7 @@ hide_missing = true
 
 [[block]]
 block = "net"
-device = "enxe4b97a7de6f1"
+device = "enp0s20f0u2u4"
 speed_up = false
 speed_down = false
 interval = 5

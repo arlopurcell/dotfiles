@@ -278,6 +278,15 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
+" Add mapping for putting from 0 register, which is just like the default one
+" except that delete and change operations don't go there (just yanks)
+noremap <leader>p "0p
+noremap <leader>P "0P
+vnoremap <leader>p "0p
+
+" Delete to blackhole register
+noremap <leader>d "_d
+
 
 "-----------------------------------------------------------
 
@@ -346,7 +355,7 @@ let g:indent_guides_guide_size = 1
 set wildignore+=*/mode_modules/*,*/__pycache__/*,*/target/*,*.pyc
 
 " NERDTree settings
-nnoremap <leader>d :NERDTreeFocusToggle<CR>
+nnoremap <leader>k :NERDTreeFocusToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]', '__pycache__[[dir]]']
 let NERDTreeWinSize=60
 
@@ -391,3 +400,4 @@ set completeopt=noinsert,menuone,noselect
 "------------------------------------------
 let g:python_host_prog = '/home/arlo/.pyenv/versions/neovim/bin/python'
 let g:python3_host_prog = '/home/arlo/.pyenv/versions/neovim/bin/python'
+

@@ -50,7 +50,8 @@ exec swayidle -w \
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock --daemonize --color 000000 --ignore-empty-password' \
          after-resume 'swaymsg "output * dpms on"'
-bindsym $mod+Ctrl+l exec $HOME/.config/sway/lockman.sh
+#bindsym $mod+Ctrl+l exec $HOME/.config/sway/lockman.sh
+bindsym $mod+Ctrl+l exec swaylock --daemonize --color 000000 --ignore-empty-password 
 bindsym $mod+Ctrl+s exec systemctl suspend
 
 # This will lock your screen after 1800 seconds of inactivity, then turn off
