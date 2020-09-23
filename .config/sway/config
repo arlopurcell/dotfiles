@@ -59,26 +59,16 @@ bindsym $mod+Ctrl+s exec systemctl suspend
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
 input type:keyboard {
     xkb_options ctrl:swapcaps
 }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
 # Basics:
 #
+    workspace_auto_back_and_forth yes
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -166,11 +156,11 @@ input type:keyboard {
     workspace 7 output 'Dell Inc. DELL P2416D TN5PP6860JWS'
     workspace 8 output 'Dell Inc. DELL P2416D TN5PP6860JWS'
 
-    for_window [app_id="kitty"] move to workspace "3:terminal"
-    for_window [class="jetbrains-idea"] move to workspace "4:ide"
-    for_window [app_id="firefox"] move to workspace "5:browser"
-    for_window [window_role="browser"] move to workspace "5:browser"
-    for_window [class="Slack"] move to workspace "6:messages"
+    assign [app_id="kitty"] workspace "3:terminal"
+    assign [class="jetbrains-idea"] workspace "4:ide"
+    assign [app_id="firefox"] workspace "5:browser"
+    assign [window_role="browser"] workspace "5:browser"
+    assign [class="Slack"] workspace "6:messages"
 
 #
 # Layout stuff:

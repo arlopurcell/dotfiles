@@ -8,6 +8,7 @@ alias ibwr="cd ~/indeed/ibw-spark-runner"
 alias ibwu="cd ~/indeed/ibw-leila-utils"
 alias ibwb="cd ~/indeed/ibw-leila-builders"
 alias sqp="cd ~/indeed/spark-queue-processor"
+alias ibwe="cd ~/indeed/ibw-expressions"
 
 alias keytab="kinit -kt ~/.keytab/arlo.keytab arlo"
 
@@ -30,7 +31,8 @@ icr() {
 missingshards() {
     http --headers HEAD https://squall.indeed.com/iql/query "q==from $1 ${2:-yesterday} ${3:-today}" client==iqlwebapp "username==$LDAPUSER" view==1 head==1 | sed -n "s/^IQL-Missing-Shards: \(.*\)/\1/p"
 }
-alias presto="docker run --dns 10.1.1.18 -v /home/arlo/.keytab/arlo.keytab:/tmp/keytab/arlo.keytab -it registry.corp.indeed.com/squall/hieroglyph/operators/presto_operator:3.3"
+alias presto="$HOME/bin/presto-cli --server https://presto.indeed.tech --catalog skipperhive --schema imhotep --debug --krb5-keytab-path $HOME/.keytab/$USER.keytab --krb5-principal $USER --krb5-remote-service-name HTTP --user $USER --krb5-config-path /etc/krb5.conf --krb5-disable-remote-service-hostname-canonicalization
+"
 
 alias rcr="rindy push-mr --update-jira 'Pending Review' --use-jira"
 alias ibwcr="rindy push-mr --update-jira 'Pending Review' --use-jira --assignee-ids 3071 3076 3239 3215 249"

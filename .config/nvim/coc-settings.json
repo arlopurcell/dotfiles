@@ -1,0 +1,5 @@
+{
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "~/.pyenv/shims/black",
+    "python.workspaceSymbols.exclusionPatterns": ["**/site-packages/**", "**/node_modules/**"]
+}

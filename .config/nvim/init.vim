@@ -26,7 +26,8 @@ call plug#begin('~/.vim/plugged')
 "Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'overcache/NeoSolarized'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -292,7 +293,8 @@ noremap <leader>d "_d
 
 set background=dark
 let g:solarized_termtrans=1
-colorscheme solarized
+colorscheme NeoSolarized
+set termguicolors
 
 set clipboard=unnamed
 
