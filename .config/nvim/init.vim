@@ -23,19 +23,13 @@ let mapleader = "\<Space>"
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'altercation/vim-colors-solarized'
-Plug 'overcache/NeoSolarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'autozimu/LanguageClient-neovim', {
-"    \ 'branch': 'next',
-"    \ 'do': 'bash install.sh',
-"    \ }
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 
@@ -55,7 +49,7 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 filetype indent plugin on
 
 " Enable syntax highlighting
-syntax on
+syntax enable
 
 
 "------------------------------------------------------------
@@ -291,10 +285,11 @@ noremap <leader>d "_d
 
 "-----------------------------------------------------------
 
-set background=dark
-let g:solarized_termtrans=1
-colorscheme NeoSolarized
+set background=light
+
 set termguicolors
+
+colorscheme solarized8
 
 set clipboard=unnamed
 
@@ -315,7 +310,6 @@ set undodir=~/.vim/undo//
 
 " Less indentation in html
 autocmd BufNewFile,BufRead *.html setlocal sw=2 sts=2 ts=2
-
 
 
 "------------------------------------------
@@ -371,22 +365,6 @@ nnoremap <leader>r :Rg<CR>
 "------------------------------------------
 " Required for operations modifying multiple buffers like rename.
 set hidden
-
-"    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-"let g:LanguageClient_serverCommands = {
-"    \ 'rust': ['rust-analyzer'],
-"    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-"    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-"    \ 'python': ['/usr/local/bin/pyls'],
-"    \ }
-"
-"let g:LanguageClient_rootMarkers = ['.langserver.root']
-"
-"nnoremap <leader>l :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-"nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-"nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 "------------------------------------------
 " ncm2 code completion settings

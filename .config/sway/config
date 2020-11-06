@@ -63,6 +63,10 @@ input type:keyboard {
     xkb_options ctrl:swapcaps
 }
 
+input type:touchpad {
+    tap enabled
+}
+
 ### Key bindings
 #
 # Basics:
@@ -233,5 +237,9 @@ bar {
     font pango:FiraCode-Regular 12
     status_command /home/arlo/bin/i3status-rs /home/arlo/.config/sway/status-rs.toml
 }
+
+# brightness control
+bindsym $mod+F6 exec light -A 5
+bindsym $mod+F5 exec light -U 5
 
 include /etc/sway/config.d/*

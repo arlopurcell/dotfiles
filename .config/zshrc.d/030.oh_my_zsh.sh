@@ -47,7 +47,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="false"
 
 
 # zsh autosuggestions config
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=14"
 
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
