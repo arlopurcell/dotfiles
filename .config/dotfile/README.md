@@ -33,5 +33,4 @@ Repository for my dotfiles. works via a bare git repository, adapted from here: 
 * ranger 
 * ripgrep
 * fd 
-* gron - https://github.com/tomnomnom/gron/
 * httpie
