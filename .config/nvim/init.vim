@@ -28,10 +28,10 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'lifepillar/vim-solarized8'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
+Plug 'dyng/ctrlsf.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
@@ -356,9 +356,14 @@ let NERDTreeIgnore=['\.pyc$', '.egg-info[[dir]]', '__pycache__[[dir]]']
 let NERDTreeWinSize=60
 
 " fzf settings
-nnoremap <leader>a :Files<CR>
-nnoremap <leader>t :GFiles<CR>
-nnoremap <leader>r :Rg<CR>
+nnoremap <leader>a :call fzf#run(fzfwrap({'down': '40%'}))<CR>
+nnoremap <leader>t :call fzf#run(fzf#wrap({'source': 'git ls-files', 'down': '40%'}))<CR>
+
+" CtrlSF Settings
+nmap <leader>r <Plug>CtrlSFPrompt
+let g:ctrlsf_auto_focus = {"at": "start"}
+let g:ctrlsf_regex_pattern = 1
+let g:ctrlsf_position = 'bottom'
 
 "------------------------------------------
 " language client settings
