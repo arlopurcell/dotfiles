@@ -32,6 +32,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'dyng/ctrlsf.vim'
+Plug 'udalov/kotlin-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}

@@ -8,4 +8,10 @@ junit*.properties
 *.iml
 local-repo.cfg
 .langserver.root
+.classpath
+.project/
+.settings/
+build/
+gen/
+target/
 

@@ -1,5 +1,11 @@
 {
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "~/.pyenv/shims/black",
-    "python.workspaceSymbols.exclusionPatterns": ["**/site-packages/**", "**/node_modules/**"]
+    "python.workspaceSymbols.exclusionPatterns": ["**/site-packages/**", "**/node_modules/**"],
+    "languageserver": {
+        "kotlin": {
+            "command": "~/github/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
+            "filetypes": ["kotlin"]
+        }
+    }
 }
