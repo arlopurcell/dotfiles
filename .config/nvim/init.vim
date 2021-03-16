@@ -40,7 +40,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Mergetool configs
-let g:mergetool_layout = 'bmr'
+let g:mergetool_layout = 'lmr'
 let g:mergetool_prefer_revision = 'local'
 
 nmap <expr> <C-Left> &diff? '<Plug>(MergetoolDiffExchangeLeft)' : '<C-Left>'
