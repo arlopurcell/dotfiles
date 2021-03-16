@@ -6,15 +6,14 @@
 [format]
     pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 [merge]
-    tool = meld
+    tool = vimdiff
     conflictstyle = diff3
 [mergetool]
     keepBackup = false
     prompt = false
-[mergetool "meld"]
-    trustExitCode = true
+    path = nvim
 [diff]
-    tool = meld
+    tool = vimdiff
 [difftool]
     prompt = false
 [user]
@@ -71,3 +70,5 @@
     templatedir = ~/.git-templates
 [interactive]
     diffFilter = delta --color-only
+[pull]
+	rebase = false

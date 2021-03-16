@@ -1,4 +1,6 @@
 alias ls="exa"
+alias ll="exa -lh"
+alias la="exa -lha"
 alias dotfile="/usr/bin/git --git-dir=$HOME/.config/dotfile --work-tree=$HOME"
 alias vim="nvim"
 

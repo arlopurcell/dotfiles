@@ -9,7 +9,7 @@ junit*.properties
 local-repo.cfg
 .langserver.root
 .classpath
-.project/
+.project
 .settings/
 build/
 gen/

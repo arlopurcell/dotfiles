@@ -134,7 +134,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 " Settings for coc
-let g:coc_node_path = '/home/arlo/.nvm/versions/node/v10.21.0/bin/node'
+let g:coc_node_path = '/home/arlo/.nvm/versions/node/v10.24.0/bin/node'
 set updatetime=300
 set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
@@ -242,7 +242,13 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline=
+set statusline+=%f
+set statusline+=\ %{coc#status()}%{get(b:,'coc_current_function','')}
+" Put stuff on the right
+set statusline+=%=
+set statusline+=\ %p%%
+set statusline+=\ %l,%c
 
 
 "------------------------------------------------------------
