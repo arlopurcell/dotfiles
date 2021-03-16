@@ -6,12 +6,15 @@
 [format]
     pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 [merge]
-    tool = vimdiff
+    tool = vim_mergetool
     conflictstyle = diff3
 [mergetool]
     keepBackup = false
     prompt = false
     path = nvim
+[mergetool "vim_mergetool"]
+    cmd = vim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+    trustExitCode = true
 [diff]
     tool = vimdiff
 [difftool]

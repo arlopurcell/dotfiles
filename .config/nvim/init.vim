@@ -22,24 +22,34 @@ inoremap jk <ESC>
 let mapleader = "\<Space>"
 
 call plug#begin('~/.vim/plugged')
+    Plug 'Raimondi/delimitMate'
+    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'lifepillar/vim-solarized8'
+    Plug 'scrooloose/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+    Plug 'dyng/ctrlsf.vim'
+    Plug 'udalov/kotlin-vim'
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'samoshkin/vim-mergetool'
 
-Plug 'Raimondi/delimitMate'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'lifepillar/vim-solarized8'
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'dyng/ctrlsf.vim'
-Plug 'udalov/kotlin-vim'
-Plug 'HerringtonDarkholme/yats.vim'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
-
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
+" Mergetool configs
+let g:mergetool_layout = 'bmr'
+let g:mergetool_prefer_revision = 'local'
+
+nmap <expr> <C-Left> &diff? '<Plug>(MergetoolDiffExchangeLeft)' : '<C-Left>'
+nmap <expr> <C-Right> &diff? '<Plug>(MergetoolDiffExchangeRight)' : '<C-Right>'
+nmap <expr> <C-Down> &diff? '<Plug>(MergetoolDiffExchangeDown)' : '<C-Down>'
+nmap <expr> <C-Up> &diff? '<Plug>(MergetoolDiffExchangeUp)' : '<C-Up>'
+
+nmap <expr> <Up> &diff ? '[c' : '<Up>'
+nmap <expr> <Down> &diff ? ']c' : '<Down>'
 
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
