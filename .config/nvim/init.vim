@@ -22,24 +22,34 @@ inoremap jk <ESC>
 let mapleader = "\<Space>"
 
 call plug#begin('~/.vim/plugged')
+    Plug 'Raimondi/delimitMate'
+    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'lifepillar/vim-solarized8'
+    Plug 'scrooloose/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+    Plug 'dyng/ctrlsf.vim'
+    Plug 'udalov/kotlin-vim'
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'samoshkin/vim-mergetool'
 
-Plug 'Raimondi/delimitMate'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'lifepillar/vim-solarized8'
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'dyng/ctrlsf.vim'
-Plug 'udalov/kotlin-vim'
-Plug 'HerringtonDarkholme/yats.vim'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
-
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
+" Mergetool configs
+let g:mergetool_layout = 'lmr'
+let g:mergetool_prefer_revision = 'local'
+
+nmap <expr> <C-Left> &diff? '<Plug>(MergetoolDiffExchangeLeft)' : '<C-Left>'
+nmap <expr> <C-Right> &diff? '<Plug>(MergetoolDiffExchangeRight)' : '<C-Right>'
+nmap <expr> <C-Down> &diff? '<Plug>(MergetoolDiffExchangeDown)' : '<C-Down>'
+nmap <expr> <C-Up> &diff? '<Plug>(MergetoolDiffExchangeUp)' : '<C-Up>'
+
+nmap <expr> <Up> &diff ? '[c' : '<Up>'
+nmap <expr> <Down> &diff ? ']c' : '<Down>'
 
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
@@ -134,7 +144,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 " Settings for coc
-let g:coc_node_path = '/home/arlo/.nvm/versions/node/v10.21.0/bin/node'
+let g:coc_node_path = '/home/arlo/.nvm/versions/node/v10.24.0/bin/node'
 set updatetime=300
 set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
@@ -242,7 +252,13 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline=
+set statusline+=%f
+set statusline+=\ %{coc#status()}%{get(b:,'coc_current_function','')}
+" Put stuff on the right
+set statusline+=%=
+set statusline+=\ %p%%
+set statusline+=\ %l,%c
 
 
 "------------------------------------------------------------
