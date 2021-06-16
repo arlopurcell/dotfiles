@@ -1,6 +1,7 @@
 alias ls="exa"
 alias dotfile="/usr/bin/git --git-dir=$HOME/.config/dotfile --work-tree=$HOME"
 alias vim="nvim"
+alias ssh="kitty +kitten ssh"
 
 alias ibw="cd ~/indeed/indexbuilder"
 alias ibwd="cd ~/indeed/ibw-spark-daemon"

@@ -76,6 +76,9 @@ input type:touchpad {
     # Start a terminal
     bindsym $mod+Return exec $term
 
+    # Start a kitty terminal with small text
+    bindsym $mod+Shift+Return exec kitty --override font_size=12
+
     # Kill focused window
     bindsym $mod+Shift+q kill
 
