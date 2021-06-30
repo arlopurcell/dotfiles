@@ -1,6 +1,6 @@
 unset SSH_AUTH_SOCK # something evil is erroneously setting this
 zstyle :omz:plugins:ssh-agent agent-forwarding yes
-zstyle :omz:plugins:ssh-agent identities id_rsa
+zstyle :omz:plugins:ssh-agent identities id_ed25519
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -54,7 +54,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=14"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ssh-agent ant git-prompt docker rust cargo zsh-autosuggestions solarized-man zsh-syntax-highlighting)
+plugins=(ssh-agent git-prompt docker rust cargo zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

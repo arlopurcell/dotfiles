@@ -28,8 +28,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
     Plug 'dyng/ctrlsf.vim'
     Plug 'udalov/kotlin-vim'
     Plug 'HerringtonDarkholme/yats.vim'
@@ -144,7 +142,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 " Settings for coc
-let g:coc_node_path = '/home/arlo/.nvm/versions/node/v10.24.0/bin/node'
+let g:coc_node_path = '/home/arlo/.nvm/versions/node/v16.4.0/bin/node'
 set updatetime=300
 set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
@@ -388,15 +386,6 @@ let g:ctrlsf_position = 'bottom'
 "------------------------------------------
 " Required for operations modifying multiple buffers like rename.
 set hidden
-
-"------------------------------------------
-" ncm2 code completion settings
-"------------------------------------------
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
 
 "------------------------------------------
 " python settings
