@@ -50,6 +50,10 @@ hide_inactive = true
 hide_missing = true
 
 [[block]]
+block = "bluetooth"
+mac = "5A:5A:5A:A6:17:D1"
+
+[[block]]
 block = "time"
 interval = 60
 format = "%a %b %e %R"
