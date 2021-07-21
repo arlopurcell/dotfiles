@@ -16,12 +16,14 @@
     cmd = nvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
     trustExitCode = true
 [diff]
-    tool = vimdiff
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [difftool]
     prompt = false
 [user]
 	name = Arlo J Purcell
-    email = arlo@indeed.com
+    email = apurcell@decodable.co
 [alias]
     co = commit -am
     lol = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' 
@@ -79,8 +81,10 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
 [init]
-    templatedir = ~/.git-templates
+	  defaultBranch = main
 [interactive]
     diffFilter = delta --color-only
 [pull]
 	rebase = false
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

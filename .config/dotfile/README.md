@@ -17,6 +17,8 @@ Repository for my dotfiles. works via a bare git repository, adapted from here: 
 * neovim 
 * vim-plug - `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
 * i3 
+* i3lock
+* xautolock
 * kitty 
 * fzf 
 * exa

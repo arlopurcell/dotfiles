@@ -34,7 +34,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'samoshkin/vim-mergetool'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 " Mergetool configs
@@ -264,10 +263,10 @@ set statusline+=\ %l,%c
 "
 " Indentation settings according to personal preference.
 
-" Indentation settings for using 4 spaces instead of tabs.
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+" Indentation settings for using 2 spaces instead of tabs.
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as

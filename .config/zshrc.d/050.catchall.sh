@@ -19,3 +19,5 @@ DEFAULT_USER=`whoami`
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
+
+export EDITOR=nvim
