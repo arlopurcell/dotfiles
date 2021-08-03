@@ -24,7 +24,7 @@ Repository for my dotfiles. works via a bare git repository, adapted from here: 
 * exa
 * bat
 * delta (git-delta)
-* i3status-rust - https://github.com/arlo/i3status-rust/
+* i3status-rust - https://github.com/arlopurcell/i3status-rust/
 * rust - `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 * oh-my-zsh - `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 * zsh-autosuggestions - `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`

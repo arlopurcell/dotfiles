@@ -22,15 +22,14 @@
 [difftool]
     prompt = false
 [user]
-	name = Arlo J Purcell
-    email = apurcell@decodable.co
+	  name = Arlo J Purcell
+    email = arlo@decodable.co
 [alias]
     co = commit -am
     lol = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' 
     lal = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --all
 [core]
     excludesfile = ~/.gitignore_global
-	attributesfile = /home/arlo/indeed/javadev/git/gitattributes
 [pager]
     diff = delta
     log = delta
@@ -55,10 +54,6 @@
 [color "branch"]
     current = yellow
     local = green
-[include]
-	path = /home/arlo/indeed/javadev/git/merge-drivers
-	path = /home/arlo/indeed/javadev/git/aliases
-	path = /home/arlo/indeed/javadev/git/general-config
 [help]
     autocorrect = 1
 [rerere]

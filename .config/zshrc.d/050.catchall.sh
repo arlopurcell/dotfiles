@@ -21,3 +21,5 @@ DEFAULT_USER=`whoami`
 kitty + complete setup zsh | source /dev/stdin
 
 export EDITOR=nvim
+
+setxkbmap -option ctrl:swapcaps

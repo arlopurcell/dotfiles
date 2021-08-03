@@ -31,7 +31,7 @@ format = "{utilizationbar}"
 
 [[block]]
 block = "net"
-device = "wlp29s0"
+device = "wlp55s0"
 ssid = true
 signal_strength = true
 signal_strength_bar = true
@@ -39,19 +39,6 @@ speed_up = false
 speed_down = false
 interval = 5
 hide_missing = true
-
-[[block]]
-block = "net"
-device = "enp0s20f0u2u4"
-speed_up = false
-speed_down = false
-interval = 5
-hide_inactive = true
-hide_missing = true
-
-[[block]]
-block = "bluetooth"
-mac = "5A:5A:5A:A6:17:D1"
 
 [[block]]
 block = "time"
