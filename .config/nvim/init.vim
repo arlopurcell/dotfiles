@@ -141,7 +141,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 " Settings for coc
-let g:coc_node_path = '/home/arlo/.nvm/versions/node/v16.5.0/bin/node'
+let g:coc_node_path = '/home/arlo/n/bin/node'
 set updatetime=300
 set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.

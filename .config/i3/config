@@ -14,6 +14,9 @@ bindsym Control+$mod+l exec "i3lock -c 000000"
 # auto lock the screen
 exec "xautolock -detectsleep -time 10 -locker \"i3lock -c 000000\""
 
+# set a cool background
+exec "feh --bg-fill --randomize /usr/share/backgrounds/fedora-workstation/*"
+
 # change screen modes
 bindsym $mod+Shift+m exec ~/.screenlayout/mobile.sh
 bindsym $mod+Shift+d exec ~/.screenlayout/desk.sh
@@ -179,5 +182,5 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status-rs /home/arlo/.config/i3/status-rs.toml
+  status_command i3status-rs /home/arlo/.config/i3/status-rs.toml
 }
