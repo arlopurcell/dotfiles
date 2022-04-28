@@ -1,11 +1,4 @@
-**/developer-arlo-config.properties
-.ant-targets-build.xml
-.ant_targets
-provisioning/cookbooks/*/attributes/devConfig.rb
-junit*.properties
-.*.swp
 *.iml
-local-repo.cfg
 .langserver.root
 .classpath
 .project
