@@ -54,7 +54,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=14"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ssh-agent git-prompt docker rust zsh-autosuggestions zsh-syntax-highlighting kubectl gradle golang)
+plugins=(ssh-agent git-prompt docker rust zsh-autosuggestions zsh-syntax-highlighting kubectl poetry)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'udalov/kotlin-vim'
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'samoshkin/vim-mergetool'
+    Plug 'nvie/vim-flake8'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -143,7 +144,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 " Settings for coc
-let g:coc_node_path = '/Users/arlo/.asdf/installs/nodejs/19.1.0/bin/node'
+let g:coc_node_path = '/Users/Arlo/.nvm/versions/node/v18.14.0/bin/node'
 set updatetime=300
 set signcolumn=yes
 

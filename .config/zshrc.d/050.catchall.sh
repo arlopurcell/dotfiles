@@ -1,5 +1,5 @@
 # disable horrific ctrl sequences
-stty -ixon 
+#stty -ixon 
 
 bindkey -e
 bindkey "^U" backward-kill-line
@@ -22,4 +22,7 @@ kitty + complete setup zsh | source /dev/stdin
 
 export EDITOR=nvim
 
-setxkbmap -option ctrl:swapcaps
+# source 1password plugins
+source "${HOME}/.config/op/plugins.sh"
+
+export AWS_PAGER=""

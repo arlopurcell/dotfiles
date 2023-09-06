@@ -2,4 +2,8 @@ if [ -e "${HOME}/.profile" ]; then
     source "${HOME}/.profile"
 fi
 
-setxkbmap -option ctrl:swapcaps
+case `uname` in
+  Linux)
+    setxkbmap -option ctrl:swapcaps
+  ;;
+esac

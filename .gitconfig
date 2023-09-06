@@ -22,8 +22,8 @@
 [difftool]
     prompt = false
 [user]
-	  name = Arlo J Purcell
-    email = arlo@decodable.co
+	name = Arlo Purcell
+	email = arlo.purcell@iterativescopes.com
 [alias]
     co = commit -am
     lol = log --graph --pretty=format:'%Cblue%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' 
